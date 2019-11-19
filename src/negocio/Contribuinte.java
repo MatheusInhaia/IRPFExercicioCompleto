@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 public class Contribuinte {
     private String nome;
     private String CPF;
+    //se der tempo trasformar idade para date que seria o correto.
     private int idade;
     private int numeroDependentes;
     private BigDecimal contribuicaoPrevidenciariaOficial;
