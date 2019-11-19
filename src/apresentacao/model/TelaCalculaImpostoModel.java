@@ -22,4 +22,8 @@ public class TelaCalculaImpostoModel {
             throw new Exception("Falha ao adicionar pessoa!", e);
         }
     }
+
+    public void voltarATelainicial()throws Exception{
+        main.loadScene("FXML/TelaInicial.fxml", "Bem Vindo");
+    }
 }

@@ -32,6 +32,8 @@ public class TelaCalculaImpostoController {
         }else {
 
             telaCalculaImpostoModel.cadastrarContribuinteCompleto(nome.getText(), cpf.getText(), Integer.parseInt(idade.getText()), Integer.parseInt(dependentes.getText()), new BigDecimal(contrOficial.getText()), new BigDecimal(totalRendimentos.getText()));
+            JOptionPane.showMessageDialog(null, "Adicionado com sucesso!");
+            telaCalculaImpostoModel.voltarATelainicial();
         }
     }
 }

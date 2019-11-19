@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="apresentacao.view.ListarContribuinte"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apresentacao.controller.TelaListarContribuinteController">
+    <children>
+        <TableView fx:id="tabela" layoutX="1.0" prefHeight="255.0" prefWidth="732.0">
+            <columns>
+                <TableColumn fx:id="Tnome" prefWidth="75.0" text="Nome" />
+                <TableColumn fx:id="Tcpf" prefWidth="75.0" text="CPF" />
+                <TableColumn fx:id="Tidade" prefWidth="75.0" text="Idade" />
+                <TableColumn fx:id="Tdep" prefWidth="98.0" text="Dependentes" />
+                <TableColumn fx:id="Tcontr" prefWidth="127.0" text="Contribuição oficial" />
+                <TableColumn fx:id="TRendimentos" prefWidth="145.0" text="Total de rendimentos" />
+                <TableColumn fx:id="Tvalor" prefWidth="136.0" text="Valor a pagar" />
+            </columns>
+        </TableView>
+        <Button fx:id="voltar" layoutX="331.0" layoutY="263.0" mnemonicParsing="false" onAction="#clicarVoltar" text="Voltar" />
+    </children>
+</Pane>
