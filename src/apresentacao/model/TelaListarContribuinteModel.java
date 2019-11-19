@@ -3,16 +3,19 @@ package apresentacao.model;
 import apresentacao.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import negocio.Contribuinte;
+import negocio.IrpfFachada;
 
 public class TelaListarContribuinteModel {
 
     public App app = new App();
 
 
-    public ObservableList<PessoaImpostoGenerica> listaDeClientes() {
-        ObservableList<PessoaImpostoGenerica> pessoas = FXCollections.observableArrayList();
-        for(PessoaImposto p: RelacaoDePessoas.listarContas()){
-            pessoas.add(new PessoaImpostoGenerica(p));
+    public ObservableList<Contribuinte> listaDeClientes() throws Exception {
+        IrpfFachada irpfFachada = new IrpfFachada();
+        ObservableList<Contribuinte> pessoas = FXCollections.observableArrayList();
+        for(Contribuinte c: irpfFachada.buscarTodos() ){
+            pessoas.add(new Contribuinte(c));
         }
         return pessoas;
     }
