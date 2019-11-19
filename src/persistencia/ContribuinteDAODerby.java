@@ -70,7 +70,7 @@ public class ContribuinteDAODerby implements ContribuinteDAO {
 
 
     @Override
-    public Contribuinte buscarNome(String nome) {
+    public Contribuinte buscarNome(String nome) throws Exception{
         String sql = "select * from Contribuinte where nome = ?";
         Contribuinte c = null;
         try (Connection conexao = ContribuinteDAODerby.getConnection()) {
@@ -92,7 +92,7 @@ public class ContribuinteDAODerby implements ContribuinteDAO {
                 }
             }
         } catch (Exception e) {
-            //throw new DAOEditoraException("Falha na busca", e);
+            throw new Exception("Falha na busca", e);
         }
         return null;
     }
@@ -125,7 +125,7 @@ public class ContribuinteDAODerby implements ContribuinteDAO {
 
 
     @Override
-    public List<Contribuinte> listarTodos() {
+    public List<Contribuinte> listarTodos(){
         List<Contribuinte> contribuintes = new ArrayList<>();
         String sql = "select * from Contribuinte";
         try (Connection conexao = ContribuinteDAODerby.getConnection()) {
